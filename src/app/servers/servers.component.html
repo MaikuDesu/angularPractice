@@ -1,0 +1,24 @@
+<label>Server Name</label>
+<!--<input
+type="text" 
+class="form-control"
+(input)="onUpdateServerName($event)"-->
+<input
+type="text" 
+class="form-control"
+[(ngModel)]="serverName">
+<button class="btn btn-primary"
+[disabled]="!allowNewServer"
+(click)="onCreateServer()">Add Server</button> <!-- <This here is basically event binding parenthesis then event name and boom
+    [] mean your using a property. In this line the property is turned true after 2 seconds
+    <p [innerText]= "allowNewServer"></p> <!-- Using String Interporalation instead of property binding-->
+    <!-- Rule Of Thumb:
+        If you want to output or print text use string interpolation
+        If you want to change a property off an element or component use property binding-->
+<!--<p>{{ serverCreationStatus }}</p>-->
+<p *ngIf="serverCreated">Server was created, server name is {{ serverName }}</p>
+<!-- <ng-template #noServer>
+    <p>No server was created!</p>
+</ng-template> (NgIfElse) Displays the text conditonally, so after button has been pressed--> 
+<app-server></app-server>
+<app-server></app-server>
